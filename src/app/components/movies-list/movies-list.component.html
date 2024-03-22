@@ -1,0 +1,10 @@
+<div class="core-movies-list">
+  <app-movie-filter (titleFilterChange)="titleFilter = $event" (releaseYearFilterChange)="releaseYearFilter = $event" />
+  <ul>
+    <ng-container *ngFor="let movie of movies$ | async">
+      <li *ngIf="isMoviePrint(movie)">
+        <app-movie-item [movie]="movie" />
+      </li>
+    </ng-container>
+  </ul>
+</div>

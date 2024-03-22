@@ -1,0 +1,4 @@
+.core-movies-list {
+  display: flex;
+  flex-direction: column;
+}

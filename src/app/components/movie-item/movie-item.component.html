@@ -1,0 +1,11 @@
+<div class="core-movie-item">
+  <div class="information-movie-item">
+    <span class="title-movie-item">{{ movie.title }}</span>
+    <p class="details-movie-item">
+      <span>Release date: {{ movie.releaseDate | date : 'YYYY-MM-dd' }}</span>
+      <span>Budget: {{ movie.budget | toMillion }}</span>
+      <span>Duration: {{ movie.duration | durationMovie }}</span>
+    </p>
+  </div>
+  <a [attr.id]="movie.id" class="link-button link-movie-item" [routerLink]="[movie.id]"> Détails </a>
+</div>

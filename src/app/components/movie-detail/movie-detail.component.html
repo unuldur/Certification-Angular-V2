@@ -1,0 +1,24 @@
+<div class="core-movie-detail" *ngIf="movie$ | async as movie">
+  <a class="link-button back-button-movie-detail" [routerLink]="['../']">
+    <img src="assets/svg/icons/icon-home.svg" width="20px" alt="" />
+    Back</a
+  >
+  <h1 class="title-movie-detail">{{ movie.title }}</h1>
+  <div class="paragraphe-movie-detail">
+    <img width="350rem" alt="" [src]="movie.poster" />
+    <p class="summary-movie-detail"><b>Summary: </b> {{ movie.summary }}</p>
+  </div>
+  <h2>Details</h2>
+  <dl>
+    <dt>Box office</dt>
+    <dd>{{ movie.boxOffice | toMillion }}</dd>
+    <dt>Budget</dt>
+    <dd>{{ movie.budget | toMillion }}</dd>
+    <dt>Duration</dt>
+    <dd>{{ movie.duration | durationMovie }}</dd>
+    <dt>Producers</dt>
+    <dd>{{ movie.producers | join : ', ' }}</dd>
+    <dt>Cinematographers</dt>
+    <dd>{{ movie.cinematographers | join : ', ' }}</dd>
+  </dl>
+</div>
